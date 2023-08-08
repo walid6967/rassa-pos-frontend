@@ -7,6 +7,13 @@ module.exports = {
     extend: {
       fontFamily:{
         Estedad : "Estedad",
+      },
+      fontSize: {
+        "btnS": "20px",
+      },
+      colors:{
+        btn:"#00B4FF",
+        charts: "#E6F6FD",
       }
     },
   },
