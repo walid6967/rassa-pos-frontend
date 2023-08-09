@@ -1,20 +1,17 @@
 import React from 'react'
 import style from './assets/styles/styles'
 import { CiSearch } from "react-icons/ci";
-
+import Chart from './components/Chart';
+import Pagebtn from './components/Pagebtn';
+import Date from './components/Date';
  const App = () => {
   return (
-    <div className={`${style.center} border border-black overflow-hidden p-5 w-full h-[100vh]`}>
+    <div className={`${style.center} overflow-hidden p-5 w-full h-auto`}>
       <div className={`rounded-lg shadow-2xl flex flex-col w-full h-full p-5`}>
         <div className={`${style.row} items-start justify-between w-full`}>
           <div className={`${style.row} items-center gap-x-5`}>
             <p className={`font-medium ${style.font} border-r-4 border-black pr-3 text-20`}>خرید</p>
-            <input
-              placeholder="تعیین تاریخ..."
-              type="date"
-              id="date"
-              className={`${style.font} px-5 py-3 rounded-sm border border-gray-100 outline-none before:content-['']`}
-             />
+            <Date />
           </div>
           <div className={`${style.row} items-center gap-x-5`}>
             <div className={`${style.row} bg-white items-center justify-between w-[w-[360px] h-[50px] px-5  py-[12px] font-medium rounded-md drop-shadow-xl`}>
@@ -24,29 +21,10 @@ import { CiSearch } from "react-icons/ci";
               <button className={`${style.font} text-white  font-medium bg-btn  py-[12px] px-[20px] rounded-md`}>ثبت فاکتور خرید</button>
           </div> 
         </div>
-
+        <Chart />
+        <Pagebtn />
       </div>
     </div>
   )
 }
 export default App
-{/**
-<div className={`${style.backGroundRed} ${style.font}`}>
-      <div>
-        {
-          texts.map((item , index) =>{
-            return(
-              <div id={index} className={`flex flex-row items-center ${index == 0 ? "justify-around" : "justify-around"} w-full p-3 rounded0-lg ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}>
-                <div>{item.no}</div>
-                <div>{item.fName}</div>
-                <div>{item.FNumber}</div>
-                <div>{item.data}</div>
-                <div>{item.howMany}</div>
-                <div>{item.collect}</div>
-              </div>
-            )
-          })
-        }
-      </div>
-    </div>
-*/}
