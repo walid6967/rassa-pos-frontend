@@ -6,7 +6,7 @@ import style from '../assets/styles/styles';
 import { calendar } from '../assets/img';
 const Date = () => {
   return (
-    <div className={`border border-gray-100 py-2 px-5 rounded-md ${style.row} items-center justify-center`}>
+    <div className={`border border-gray-100 py-2 px-5 rounded-md ${style.row} items-center justify-center ${style.font}`}>
       <label htmlFor="date" className={`cursor-pointer`}>
         <img src={calendar} className='w-[24px] h-[24px] ml-5' />
       </label>
@@ -20,7 +20,7 @@ const Date = () => {
         }}
         placeholder='تعیین تاریخ...'
       />
-      <label htmlFor="date" className={`cursor-pointer`}><BsChevronDown /></label>
+      <label htmlFor="date" className={`cursor-pointer`}><BsChevronDown className='text-gray-500' /></label>
     </div>
  
   )
