@@ -16,7 +16,8 @@ module.exports = {
         charts: "#E6F6FD",
         page:"#999999",
         gray_fac: "#666666",
-        gray_line:"#DADADA"
+        gray_line:"#DADADA",
+        gray_input:"#FFFFFF"
       }
     },
   },
