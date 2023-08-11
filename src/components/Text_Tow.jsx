@@ -41,7 +41,7 @@ const Text_2 = [
     },
     {
       no: "6",
-      fName:"یاسین جان",
+      fName:"محب",
       FNumber: "23452",
       data: "1401/12/12",
       howMany: "20",

@@ -14,6 +14,7 @@
     "react-icons": "^4.10.1",
     "react-multi-date-picker": "^4.1.2",
     "react-router-dom": "^6.14.2",
+    "react-router-dom-5-to-6-compat": "^0.0.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

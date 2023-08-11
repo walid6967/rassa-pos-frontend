@@ -4,8 +4,10 @@ import Text from './Text'
 import { BsChevronLeft , BsChevronRight } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import PageTow from './PageTow';
+import { useHistory } from 'react-router-dom'
 const Chart = () => {
     const [pageNext , setPageNext] = useState(false)
+    const [facktorP , setFacktorP] = useState(true)
 
     const nextPage1 = () =>{
         setPageNext(false)
@@ -14,11 +16,11 @@ const Chart = () => {
         setPageNext(true)
     }
     const facktor = (e) =>{
-        console.log(e.target.value);
+        setFacktorP(false)
     }
   return (
     <>
-    <div className={`${style.col} items-start mt-5 w-full ${pageNext == true ? "hidden" : "flex"}`}>
+    <div className={`${style.col} items-start mt-5 w-full ${pageNext == true ? "hidden" : "flex"} `}>
         <div className={`${style.row} items-center justify-center p-0 w-full`}>
             <div className={`${style.chartHeader} w-[10%]`}>NO</div>
             <div className={`${style.chartHeader} w-[25%]`}>نام فروشنده</div>
@@ -31,14 +33,16 @@ const Chart = () => {
             {
                 Text.map((item , index) =>{
                     return(
-                    <div className={`${style.row} items-center justify-center p-0 w-full`}>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} onClick={facktor} ><Link to="/facktor">{item.no}</Link></div>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.fName}</div>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.FNumber}</div>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.data}</div>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.howMany}</div>
-                        <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.collect}</div>
-                    </div>
+                    <Link to="/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
+                        <div className={`${style.row} items-center justify-center p-0 w-full`}>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} onClick={facktor} >{item.no}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.fName}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.FNumber}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.data}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.howMany}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} onClick={facktor} >{item.collect}</div>
+                        </div>
+                    </Link>
                     )
                 })
             }

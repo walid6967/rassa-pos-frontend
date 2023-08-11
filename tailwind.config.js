@@ -14,7 +14,9 @@ module.exports = {
       colors:{
         btn:"#00B4FF",
         charts: "#E6F6FD",
-        page:"#999999"
+        page:"#999999",
+        gray_fac: "#666666",
+        gray_line:"#DADADA"
       }
     },
   },
