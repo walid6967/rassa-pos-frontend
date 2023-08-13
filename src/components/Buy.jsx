@@ -1,8 +1,7 @@
 import React from 'react'
 import style from '../assets/styles/styles';
 import { CiSearch } from "react-icons/ci";
-import Chart from './Chart';
-import Date from './Date'
+import Chart_buy from './Chart_buy';
 const Buy = (props) => {
   return (
     <div className={`${style.center} justify-center p-5 w-full h-auto `}>
@@ -19,7 +18,7 @@ const Buy = (props) => {
                   <button className={`${style.font} text-white  font-medium bg-btn  py-[12px] px-[20px] rounded-md`}>ثبت فاکتور فروش</button>
               </div> 
             </div>
-            <Chart />  
+            <Chart_buy />  
           </div>
      </div> 
   )

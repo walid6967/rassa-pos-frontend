@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import PageTow from './PageTow';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom'
-const Chart = () => {
+const Chart_buy = () => {
     const [pageNext , setPageNext] = useState(false)
     
     const nextPage1 = () =>{
@@ -30,7 +30,7 @@ const Chart = () => {
             {
                 Text.map((item , index) =>{
                     return(
-                    <Link to="/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
+                    <Link to="/buy/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
                         <div className={`${style.row} items-center justify-center p-0 w-full`}>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} >{item.no}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.fName}</div>
@@ -62,4 +62,4 @@ const Chart = () => {
   )
 }
 
-export default Chart
+export default Chart_buy
