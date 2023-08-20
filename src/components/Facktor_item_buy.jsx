@@ -1,7 +1,9 @@
 import React from 'react'
 import style from '../assets/styles/styles'
 import Text from './Text'
+import { useRef } from 'react'
 const Facktor_item_buy = () => {
+  const componentRef = useRef()
   return (
     <div className={`${style.col} items-start mt-5 w-full `}>
             <div className={`${style.row} items-center justify-center gap-x-5 gap-y-5 h w-full h-full py-2`}>

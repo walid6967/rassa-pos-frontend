@@ -1,6 +1,22 @@
 const Text = [
     {
-      no: "1",
+      id: "1",
+      fName:"حامد",
+      FNumber: "23452",
+      data: "1401/12/12",
+      howMany: "20",
+      collect : "10,000" 
+    },
+    {
+      id: "2",
+      fName:"محمود",
+      FNumber: "23452",
+      data: "1401/12/12",
+      howMany: "20",
+      collect : "10,000" 
+    },
+    {
+      id: "3",
       fName:"یاسین جان",
       FNumber: "23452",
       data: "1401/12/12",
@@ -8,7 +24,15 @@ const Text = [
       collect : "10,000" 
     },
     {
-      no: "2",
+      id: "4",
+      fName:"وهاب",
+      FNumber: "23452",
+      data: "1401/12/12",
+      howMany: "20",
+      collect : "10,000" 
+    },
+    {
+      id: "5",
       fName:"یاسین جان",
       FNumber: "23452",
       data: "1401/12/12",
@@ -16,7 +40,7 @@ const Text = [
       collect : "10,000" 
     },
     {
-      no: "3",
+      id: "6",
       fName:"یاسین جان",
       FNumber: "23452",
       data: "1401/12/12",
@@ -24,7 +48,7 @@ const Text = [
       collect : "10,000" 
     },
     {
-      no: "4",
+      id: "7",
       fName:"یاسین جان",
       FNumber: "23452",
       data: "1401/12/12",
@@ -32,45 +56,21 @@ const Text = [
       collect : "10,000" 
     },
     {
-      no: "5",
-      fName:"یاسین جان",
-      FNumber: "23452",
-      data: "1401/12/12",
-      howMany: "20",
-      collect : "10,000" 
-    },
-    {
-      no: "6",
-      fName:"یاسین جان",
-      FNumber: "23452",
-      data: "1401/12/12",
-      howMany: "20",
-      collect : "10,000" 
-    },
-    {
-      no: "7",
-      fName:"یاسین جان",
-      FNumber: "23452",
-      data: "1401/12/12",
-      howMany: "20",
-      collect : "10,000" 
-    },
-    {
-        no: "8",
+        id: "8",
         fName:"یاسین جان",
         FNumber: "23452",
         data: "1401/12/12",
         howMany: "20",
         collect : "10,000" 
       },    {
-        no: "9",
+        id: "9",
         fName:"یاسین جان",
         FNumber: "23452",
         data: "1401/12/12",
         howMany: "20",
         collect : "10,000" 
       },    {
-        no: "10",
+        id: "10",
         fName:"یاسین جان",
         FNumber: "23452",
         data: "1401/12/12",

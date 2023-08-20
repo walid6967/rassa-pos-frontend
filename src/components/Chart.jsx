@@ -30,9 +30,9 @@ const Chart = () => {
             {
                 Text.map((item , index) =>{
                     return(
-                    <Link to="/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
+                    <Link to="/buy/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
                         <div className={`${style.row} items-center justify-center p-0 w-full`}>
-                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} >{item.no}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} >{index+1}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.fName}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.FNumber}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.data}</div>
@@ -53,7 +53,7 @@ const Chart = () => {
         <button className={`w-12 h-10 flex items-center justify-center border rounded text-gray-500 hover:text-blue-500"`}><BsChevronRight className={`${style.font} text-xl`} /></button>
         <button className={`${style.row , style.page} ${pageNext == false ? "bg-btn text-white" : "bg-white"}` }  onClick={nextPage1}>1</button>
         <button className={`${style.row , style.page} ${pageNext == true ? "bg-btn text-white" : "bg-white"}`}  onClick={nextPage2}>2</button>
-        <button className={`${style.row , style.page} }`}  onClick={nextPage2}>3</button>
+        <button className={`${style.row , style.page} }`}>3</button>
         <button className={`${style.row , style.page}`}>...</button>
         <button className={`w-12 h-10 flex items-center justify-center border rounded text-gray-500 hover:text-blue-500"`}><BsChevronLeft className={`${style.font} text-xl`} /></button>
     </div>

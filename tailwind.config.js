@@ -18,7 +18,8 @@ module.exports = {
         gray_fac: "#666666",
         gray_line:"#DADADA",
         gray_input:"#FFFFFF",
-        gray_button: "#F5F5F5"
+        gray_button: "#F5F5F5",
+        error: "#EB5252",
       }
     },
   },

@@ -9,10 +9,10 @@ const App = () => {
     <>
       <Router>
         <Routes>
-          <Route path='/sell' element={<Dashbord name = {"خرید"} />} />
-          <Route path="/sell/fac" element={<Facktor/>}/>
-          <Route path='/buy' element={<Buy name={"فروش"} />} />
-          <Route path='/buy/fac' element={<Facktor_buy/>} />
+          <Route path='/buy' element={<Dashbord name = {"خرید"} />} />
+          <Route path="/buy/fac" element={<Facktor/>}/>
+          <Route path='/sell' element={<Buy name={"فروش"} />} />
+          <Route path='/sell/fac' element={<Facktor_buy/>} />
           <Route path='*' element={<h1 className={`text-center text-6xl`}>Page Not Found</h1>} />
         </Routes>
        </Router>
@@ -20,4 +20,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App  

@@ -14,15 +14,15 @@ const Footer_page_fac = () => {
         <div className={`${style.row} items-center justify-between w-full gap-x-10 mt-5`}>
           <div className={`${style.col} w-1/3 gap-y-2 `}>
             <label htmlFor="off" className={`${style.font} text-gray_fac `}>مبلغ تخفیف:</label>
-            <input id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} type="text" placeholder='23,000' />
+            <div id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} >23,000</div>
           </div>
           <div className={`${style.col} w-1/3 gap-y-2 `}>
             <label htmlFor="off" className={`${style.font} text-gray_fac `}>مالیات:</label>
-            <input id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} type="text" placeholder='23,000' />
+            <div id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} >23,000</div>
           </div>
           <div className={`${style.col} w-1/3 gap-y-2 `}>
             <label htmlFor="off" className={`${style.font} text-gray_fac `}>قابل پرداخت:</label>
-            <input id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} type="text" placeholder='23,000' />
+            <div id='off' className={`w-full py-2 px-5 border border-gray-300 rounded-lg outline-none font-bold ${style.font}`} >23,000</div>
           </div>
         </div>
     </>

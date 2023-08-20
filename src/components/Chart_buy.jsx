@@ -30,9 +30,9 @@ const Chart_buy = () => {
             {
                 Text.map((item , index) =>{
                     return(
-                    <Link to="/buy/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
+                    <Link to="/sell/fac" className={`${style.row} items-center justify-center p-0 w-full`}>
                         <div className={`${style.row} items-center justify-center p-0 w-full`}>
-                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} >{item.no}</div>
+                            <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[10%]`} >{index+1}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.fName}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.FNumber}</div>
                             <div id={index} className={`${style.chart} ${index %2 ? "bg-gray-100" : "bg-white"}  w-[25%]`} >{item.data}</div>

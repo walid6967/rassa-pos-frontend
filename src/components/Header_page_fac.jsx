@@ -1,8 +1,15 @@
 import React from 'react'
 import style from '../assets/styles/styles'
 import { Remove , Print , Edit } from '../assets/img/index';
-
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react';
 const Header_page_fac = () => {
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content:() => componentRef.current,
+    documentTitle: "emp-data",
+    onafterprint: () => alert("Good")
+  })
   return (
     <>
         <div className={`${style.row} justify-between items-center w-full`}>
