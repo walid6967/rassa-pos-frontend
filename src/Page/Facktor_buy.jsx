@@ -6,34 +6,87 @@ import { Link } from 'react-router-dom';
 
 import { Remove , Edit , Print , addcircle , Group } from '../assets/img';
 import Text from '../components/Text';
-import { useRef } from 'react';
 
 const Facktor_buy = () => {
-    
-    const [object , setObject ]  = useState(Text)
+
     const [edit , setEdit] = useState(true)
     const [text , setText] = useState(Text)
-    const [mode, setMode] = useState('view');
-    const [deletAll , setDeletAll] = useState(true)
     const [open , setOpen] = useState(false)
-    const [editText , setEditText] =useState()
     const editF = () =>{
         setEdit(false)
     }
+    const [editingTask, setEditingTask] = useState(null);
+    const [editedTextFName, setEditedTextFName] = useState('');
+    const [editedTextHowMany, setEditedTextHowMany] = useState('');
+    const [editedTextFNumber, setEditedTextFNumber] = useState('');
 
-    const componentRef = useRef()
+    const handleEditClickFName = (taskId , taskText) => {
+        if(edit == false){
+            setEditingTask(taskId);
+            setEditedTextFName(taskText);
+        }
 
+    };
+    const handleEditClickHowMany = (taskId , taskText) => {
+        if(edit == false){
+            setEditingTask(taskId);
+            setEditedTextHowMany(taskText);
+        }
+
+    };
+        const handleEditClickFNumber = (taskId , taskText) => {
+        if(edit == false){
+            setEditingTask(taskId);
+            setEditedTextFNumber(taskText);
+        }
+
+    };
+
+    const handleEditChangeFName = (event) => {
+        setEditedTextFName(event.target.value);
+    };
+    const handleEditChangeHowMany = (event) => {
+        setEditedTextHowMany(event.target.value);
+    };
+    const handleEditChangeFNumber = (event) => {
+        setEditedTextFNumber(event.target.value);
+    };
+    const handleSaveClickFName = (taskId) => {
+        setText((prevTasks) =>
+        prevTasks.map((item) =>
+        item.id === taskId ? { ...item, fName:editedTextFName } : item
+        )
+        );
+        setEditingTask(null);
+        setEditedTextFName('');
+    };
+    const handleSaveClickHowMany = (taskId) => {
+        setText((prevTasks) =>
+        prevTasks.map((item) =>
+        item.id === taskId ? { ...item, howMany:editedTextHowMany } : item
+        )
+        );
+        setEditingTask(null);
+        setEditedTextHowMany("")
+    };
+    const handleSaveClickfNumber = (taskId) => {
+        setText((prevTasks) =>
+        prevTasks.map((item) =>
+        item.id === taskId ? { ...item, FNumber:editedTextFNumber } : item
+        )
+        );
+        setEditingTask(null);
+        setEditedTextFNumber("");
+    };
+    
+    
        const handlePrint = () =>{
         window.print()  
        }
        const handleRemove = (itemId ) => {
         const updatedItems = text.filter((item) => item.id !== itemId);
         setText(updatedItems);
-      };
-      const handleChange = (e) => {
-        setText(e.target.value);
-      };
-              
+      };      
       const removingAll = () =>{
         setOpen(true)
       }
@@ -45,10 +98,7 @@ const Facktor_buy = () => {
         localStorage.clear("items");
 
       }
-       const handleInputChange = (event) => {
-        setEditText(event.target.value);
-        };
-        const rejectEdit = () =>{
+        const saveEdit = () =>{
             setEdit(true)
         }
   return (
@@ -102,7 +152,7 @@ const Facktor_buy = () => {
                     <div className={`${style.chartHeader} w-[40%] rounded-md`}>قیمت فی</div>
                     <div className={`${style.chartHeader} w-[40%] rounded-md`}>مجموع</div>
                 </div>
-                <div className={`${style.col} items-center justify-center p-0 w-full ${deletAll == true ? "flex" : "hidden"}`}>
+                <div className={`${style.col} items-center justify-center p-0 w-full`}>
                     {
                         text == null ? "" : (
                         text.map((item , index) =>{
@@ -112,10 +162,60 @@ const Facktor_buy = () => {
                                         <img className={`${style.row} w-[50px] items-center justify-center`} src={addcircle} alt="remove" />
                                     </button>
                                     <div id={index} className={`${style.chart } w-[8%] rounded-md  bg-gray-100`} >{index+1} </div>
-                                    <div id={index} className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}>{item.fName} </div>
-                                    <div id={index} className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}>{item.howMany} </div>
-                                    <div id={index} className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}>{item.FNumber} </div>
-                                    <div id={index} className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}>{item.collect} </div>
+                                    {editingTask === item.id ? (
+                                        <>
+                                            <input
+                                            type="text"
+                                            value={editedTextFName}
+                                            onChange={handleEditChangeFName}
+                                            onBlur={() => handleSaveClickFName(item.id)}
+                                            className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}
+                                            />
+                                        </>
+                                        ) : (
+                                        <>
+                                            <span className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`} onClick={() => handleEditClickFName(item.id, item.fName)}>
+                                            {item.fName}
+                                            </span>
+                                        </>
+                                        )}
+                                        {editingTask === item.id ? (
+                                        <>
+                                            <input
+                                            type="text"
+                                            value={editedTextHowMany}
+                                            onChange={handleEditChangeHowMany}
+                                            onBlur={() => handleSaveClickHowMany(item.id)}
+                                            className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}
+                                            />
+                                        </>
+                                        ) : (
+                                        <>
+                                            <span className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`} onClick={() => handleEditClickHowMany(item.id, item.howMany)}>
+                                            {item.howMany}
+                                            </span>
+                                        </>
+                                        )}
+                                        {editingTask === item.id ? (
+                                        <>
+                                            <input
+                                            type="text"
+                                            value={editedTextFNumber}
+                                            onChange={handleEditChangeFNumber}
+                                            onBlur={() => handleSaveClickfNumber(item.id)}
+                                            className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`}
+                                            />
+                                        </>
+                                        ) : (
+                                        <>
+                                            <span className={`${style.chart } w-[40%] rounded-md ${edit == false ? "text-gray-500" : "text-black" }  bg-gray-100`} onClick={() => handleEditClickFNumber(item.id, item.FNumber)}>
+                                            {item.FNumber}
+                                            </span>
+                                        </>
+                                        )}
+                                        <span className={`${style.chart } w-[40%] rounded-md  bg-gray-100`}>
+                                        {item.collect}
+                                        </span>
                                 </div>
                             )
                         })
@@ -123,7 +223,7 @@ const Facktor_buy = () => {
                     }
                 </div>
                 </div>
-                <div className={`w-full `}>
+                <div className={`w-full ${edit == false ? "hidden" : ""} `}>
                     <div className={`${style.row} items-center float-left text-[20px] mt-5`}>
                         <h1 className={` font-medium text-black`}>مجموع کل:</h1>
                         <p className={`text-btn mr-2`}>25,000</p>
@@ -132,8 +232,8 @@ const Facktor_buy = () => {
                 </div> 
             </div>
             <div className={`float-left ${style.row} items-center mt-5 gap-x-2 ${edit == true ? "hidden" : "flex"}`}>
-                <button className={`px-4 py-2 bg-gray-100 rounded-md`} onClick={rejectEdit}>لغو</button>
-                <button className={`px-5 py-2 text-white rounded-md bg-btn`} onClick={renoveF}>تائید</button>            
+                <button className={`px-4 py-2 bg-gray-100 rounded-md`} >لغو</button>
+                <button className={`px-5 py-2 text-white rounded-md bg-btn`} onClick={saveEdit}>تائید</button>            
             </div>
             <div className={` absolute top-0 left-0 right-0 bottom-0 ${style.row ,style.font} items-center justify-center w-full ${open == true ? "flex" : "hidden"} bg-[rgba(0,0,0,0.3)] h-[100%]`}>
                 <div className={`w-[25%] bg-white rounded-xl`}>
@@ -142,7 +242,7 @@ const Facktor_buy = () => {
                     </div>
                     <div className={`${style.col} items-center justify-center gap-y-5 p-5`}>
                         <h1 className={`font-bold text-2xl`}>هشدار !</h1>
-                        <p className={`w-full`}>آیا از حذف جنس مطمئن هستید؟!</p>
+                        <p className={`w-full font-bold text-[#616161]`}>آیا از حذف جنس مطمئن هستید؟!</p>
                         <div className={`${style.row} items-center justify-end w-full gap-x-4`}>
                             <button className={`px-4 py-2 bg-gray-100 rounded-md`} onClick={reject}>لغو</button>
                             <Link to="/sell">
