@@ -6,7 +6,35 @@ import { Link } from 'react-router-dom';
 import PageTow from './PageTow';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom'
+import { useEffect } from 'react';
 const Chart_buy = () => {
+  const jwt =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5MzEzMTA5MywianRpIjoiYjQ2MzA1MGItYWZmMi00NzAyLWFjMTctZTgzYjZlOTdlNzIwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImtoYWxpZCIsIm5iZiI6MTY5MzEzMTA5MywiZXhwIjoxNjkzMjE3NDkzfQ.O-XsOpUmo1rvV9mTeuMVbKJinIwfj_yzFWxbNQSQPl0";
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(`http://127.0.0.1:9005/invoices`, {
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+          },
+        });
+
+        if (response.status === 200) {
+          console.log("Data fetched successfully:", response.data);
+        } else {
+          console.log("Received status:", response.status);
+          setApiData(response.data)
+          console.log(apiData)
+        }
+      } catch (error) {
+        console.log("Error message:", error.message);
+        console.error("Error details:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
     const [pageNext , setPageNext] = useState(false)
     
     const nextPage1 = () =>{

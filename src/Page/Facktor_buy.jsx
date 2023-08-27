@@ -21,7 +21,7 @@ const Facktor_buy = () => {
   const [apiData , setApiData] = useState()
 
   const jwt =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5Mjc5Mzk5MywianRpIjoiYzIwYzE1NGItNGZiOC00YTRlLWExYmEtZTkzM2UyYWQ0N2I5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImhhbWVkLmF6aXppLnhlYXJAZ21pbC5jb20iLCJuYmYiOjE2OTI3OTM5OTMsImV4cCI6MTY5Mjg4MDM5M30.g6rLDq4HjMFQNlBUgpm-LiMd0h-R0ow9SGzycASmXHs";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5MzEzMTA5MywianRpIjoiYjQ2MzA1MGItYWZmMi00NzAyLWFjMTctZTgzYjZlOTdlNzIwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImtoYWxpZCIsIm5iZiI6MTY5MzEzMTA5MywiZXhwIjoxNjkzMjE3NDkzfQ.O-XsOpUmo1rvV9mTeuMVbKJinIwfj_yzFWxbNQSQPl0";
 
   useEffect(() => {
     async function fetchData() {
