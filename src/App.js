@@ -1,25 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {CiBag1} from 'react-icons/ci'
+import BuyFactor from './Buy/buy-factor/Main-buy-factor';
+import Factor_info from './Buy/Factor-info/Main-factor-info';
+import Types from './Buy/Utilites/Types';
+import Test from './Buy/text/text';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // what was remaind
+    // save data
+    // btn
+    <>
+        {/* <BuyFactor/> */}
+        <Factor_info/>
+      {/* <Types/> */}
+      {/* <Test/> */}
+   </>
+     );
 }
 
 export default App;
