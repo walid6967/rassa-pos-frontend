@@ -55,14 +55,6 @@ import image from '../../assets/image/image.png'
         // amount: ,
         // price: Number(items_price)
       };
-
-
-
-
-   
-
-
-    
     const handelBtn = async () => {
         setBuyAlard(true)
         // alert('KASJLjas')

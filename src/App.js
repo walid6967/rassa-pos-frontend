@@ -11,9 +11,9 @@ function App() {
     // save data
     // btn
     <>
-        {/* <BuyFactor/> */}
-        <Factor_info/>
-      {/* <Types/> */}
+        <BuyFactor/>
+        {/* <Factor_info/> */}
+      {/* <Types/>/ */}
       {/* <Test/> */}
    </>
      );

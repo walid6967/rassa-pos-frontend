@@ -6,14 +6,18 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.24.0",
+    "axios": "^1.4.0",
+    "gregorian": "^7.0.2",
+    "persian": "^1.0.1",
     "react": "^18.2.0",
     "react-datepicker": "^4.16.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-multi-date-picker": "^4.1.2",
     "react-router-dom": "^6.14.2",
+    "react-router-dom-5-to-6-compat": "^0.0.1",
     "react-scripts": "5.0.1",
+    "react-to-print": "^2.14.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,6 +45,8 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   }
 }
